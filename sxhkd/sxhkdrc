@@ -1,0 +1,30 @@
+############################
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -RTMIN+10 dwmblocks
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -RTMIN+10 dwmblocks
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 dwmblocks
+XF86AudioPlay
+	playerctl play-pause
+XF86AudioNext
+	playerctl next
+XF86AudioPrev
+	playerctl previous
+XF86MonBrightnessUp
+	brightnessctl set 10%+
+XF86MonBrightnessDown
+	brightnessctl set 10%-
+#################################	
+alt + shift + e
+	pcmanfm
+alt + p
+	dmenu_run -i
+super + v
+	copyq menu
+Print
+	scrot ~/screenshots/%b%d::%H%M%S.png --select -f -e 'xclip -selection clipboard -t image/png -i $f'
+alt + shift + Return
+	st
+super + l
+	bslock
